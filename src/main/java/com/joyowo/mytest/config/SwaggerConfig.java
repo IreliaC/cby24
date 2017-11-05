@@ -49,23 +49,21 @@ public class SwaggerConfig {
     public Docket demoApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .enable(true)
-                .groupName("insurance")
+                .groupName("cbyTest")
                 .genericModelSubstitutes(DeferredResult.class)
                 .useDefaultResponseMessages(false)
                 .forCodeGeneration(false)
-                .pathMapping("/")
                 .select()
-                .paths(or(regex("/api/.*")))//过滤的接口
                 .build()
                 .apiInfo(demoApiInfo());
     }
 
     private ApiInfo demoApiInfo() {
-        return new ApiInfo("金柚网天吴insurance系统API",//大标题
-                "joyowo Platform's REST API, for system administrator",//小标题
+        return new ApiInfo("我就是试试",//大标题
+                "TEST API FOR RESTful",//小标题
                 "1.0",//版本
                 "NO terms of service",
-                "jinw@joyowo.com",//作者
+                "??",//作者
                 "查看源代码",//链接显示文字
                 "http://gitdb.joyomm.com"//网站链接
         );
