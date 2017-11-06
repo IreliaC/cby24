@@ -30,7 +30,9 @@ import java.util.Date;
  */
 @Entity
 @lombok.Data
-@ToString
+/**
+ * 132
+ */
 public class Cat {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer catId;
