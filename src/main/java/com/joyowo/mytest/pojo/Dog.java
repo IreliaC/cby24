@@ -28,6 +28,7 @@ import lombok.ToString;
  */
 @Data
 @ToString
+
 public class Dog {
     private String dogName;
     
