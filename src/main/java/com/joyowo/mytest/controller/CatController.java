@@ -18,6 +18,7 @@ package com.joyowo.mytest.controller;//
 
 import com.joyowo.mytest.pojo.Cat;
 import com.joyowo.mytest.service.CatService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,6 +31,7 @@ import java.util.List;
  * Created by ireliac on 2017/11/5.
  */
 @RestController
+@Slf4j
 public class CatController {
 
     @Autowired
