@@ -14,7 +14,6 @@ public class AopController {
 
     @RequestMapping("/before")
     public String doBefore(Integer number) {
-
         return "200";
     }
 
@@ -22,4 +21,6 @@ public class AopController {
     public String doAfterReturning(String keys) {
         return "200";
     }
+
+
 }
