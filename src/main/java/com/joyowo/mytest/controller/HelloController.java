@@ -1,20 +1,4 @@
 package com.joyowo.mytest.controller;//
-//      ┏┛ ┻━━━━━┛ ┻┓
-//      ┃　　　　　　 ┃
-//      ┃　　　━　　　┃
-//      ┃　┳┛　  ┗┳　┃
-//      ┃　　　　　　 ┃
-//      ┃　　　┻　　　┃
-//      ┃　　　　　　 ┃
-//      ┗━┓　　　┏━━━┛
-//        ┃　　　┃   神兽保佑
-//        ┃　　　┃   代码无BUG！
-//        ┃　　　┗━━━━━━━━━┓
-//        ┃　　　　　　　    ┣┓
-//        ┃　　　　         ┏┛
-//        ┗━┓ ┓ ┏━━━┳ ┓ ┏━┛
-//          ┃ ┫ ┫   ┃ ┫ ┫
-//          ┗━┻━┛   ┗━┻━┛
 
 import com.joyowo.mytest.pojo.Data;
 import org.springframework.http.MediaType;
@@ -28,7 +12,6 @@ import java.util.Date;
  */
 @RestController
 public class HelloController {
-
     @RequestMapping(value= "/hello",produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public Data hello() {
         Data data = new Data();
