@@ -14,6 +14,7 @@ public class AopController {
 
     @RequestMapping("/before")
     public String doBefore(Integer number) {
+
         return "200";
     }
 
@@ -22,5 +23,16 @@ public class AopController {
         return "200";
     }
 
+    @RequestMapping("/afterThrowing")
+    public String doAfterThrowing(String keys) {
+        if (keys.equals("a")) {
+            throw new NullPointerException();
+        }
+        return "200";
+    }
 
+    @RequestMapping("/doAround")
+    public String doAround(String keys) {
+        return "200";
+    }
 }

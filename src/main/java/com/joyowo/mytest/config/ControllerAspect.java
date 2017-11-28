@@ -3,11 +3,9 @@ package com.joyowo.mytest.config;
 import com.alibaba.fastjson.JSON;
 import com.google.common.collect.Maps;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
@@ -67,5 +65,27 @@ public class ControllerAspect {
         System.out.println(keys);
     }
 
+    @AfterThrowing(value = "execution1()",throwing = "exception")
+    public void doAfterThrowing(JoinPoint joinPoint, Throwable exception) {
+        System.out.println(joinPoint.getSignature().getName());
+        if (exception instanceof NullPointerException) {
+            System.out.println("发生了空指针异常!!!!!");
+        }
+    }
 
+    @Around(value = "execution(* com.joyowo.mytest.controller..*.doAround(..))")
+    public Object doAround(ProceedingJoinPoint joinPoint) {
+        System.out.println("I am a Around");
+        try {
+            Long start = System.currentTimeMillis();
+            Object result = joinPoint.proceed();
+            Long end = System.currentTimeMillis();
+            System.out.println(end-start);
+            return result;
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
+        }
+
+        return null;
+    }
 }
