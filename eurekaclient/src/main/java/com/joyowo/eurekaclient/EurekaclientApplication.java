@@ -1,5 +1,8 @@
 package com.joyowo.eurekaclient;
 
+import com.netflix.appinfo.InstanceInfo;
+import com.netflix.discovery.EurekaClient;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -23,4 +26,13 @@ public class EurekaclientApplication {
 	public String home(@RequestParam String name) {
 		return "hi "+name+",i am from port:" +port;
 	}
+/*	@Autowired
+	private EurekaClient discoveryClient;
+
+	@RequestMapping("/")
+	public String serviceUrl() {
+		InstanceInfo instance = discoveryClient.getNextServerFromEureka("SERVICE-HI", false);
+		return instance.getHomePageUrl();
+	}*/
+
 }

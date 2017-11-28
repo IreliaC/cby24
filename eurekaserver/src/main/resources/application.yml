@@ -1,3 +1,10 @@
+security:
+  basic:
+    enabled: true  #开启基于HTTP basic的认证
+  user:
+    name: user    #配置登陆名
+    password: 123456   #配置登陆密码
+
 server:
   port: 8761
 
@@ -8,4 +15,4 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://user:123456@${eureka.instance.hostname}:${server.port}/eureka/
