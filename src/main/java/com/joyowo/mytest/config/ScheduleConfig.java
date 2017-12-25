@@ -18,6 +18,7 @@ package com.joyowo.mytest.config;//
 
 import com.joyowo.mytest.pojo.Cat;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -27,6 +28,7 @@ import org.springframework.scheduling.annotation.Scheduled;
  */
 @Configuration
 @EnableScheduling
+@ConditionalOnExpression("${scheduling.enabled} == true")
 public class ScheduleConfig {
 
     @Autowired

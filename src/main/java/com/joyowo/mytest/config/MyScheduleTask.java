@@ -16,13 +16,14 @@ package com.joyowo.mytest.config;//
 //          ┃ ┫ ┫   ┃ ┫ ┫
 //          ┗━┻━┛   ┗━┻━┛
 
+import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.Trigger;
 import org.springframework.scheduling.TriggerContext;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.SchedulingConfigurer;
 import org.springframework.scheduling.config.ScheduledTaskRegistrar;
 import org.springframework.scheduling.support.CronTrigger;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
 
@@ -30,7 +31,8 @@ import java.util.Date;
  * Created by ireliac on 2017/11/8.
  */
 @EnableScheduling
-@RestController
+@Configuration
+@ConditionalOnExpression("${scheduling.enabled} == true")
 public class MyScheduleTask implements SchedulingConfigurer{
     private String expression = "0/5 * * * * *";
     @Override

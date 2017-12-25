@@ -28,5 +28,6 @@ public interface CatService {
     void add(Cat cat);
     void delete(Cat cat);
     List<Cat> getAll();
-
+    Cat getCatByCatId(Integer catId);
+    void saveToRedis(Integer id);
 }
