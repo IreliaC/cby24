@@ -20,7 +20,7 @@ import java.util.Map;
 
 /**
  * 对系统中的异常处理，这里取名errcode和errmsg主要是参考了微信公众号API
- *
+ *dfsdss111111111111111111111
  * @author zhangsheng
  * @version 1.0
  */
